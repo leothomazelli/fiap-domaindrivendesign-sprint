@@ -59,10 +59,7 @@ public class DocumentoBO {
 		
 		//padronização (formato de data/hora, caracteres string maiusculo/minusculo)
 		objeto.setTipo(objeto.getTipo().toUpperCase());
-		
-		
-		
-		
+				
 		docDAO.close();
 		
 		return "Cadastrado com sucesso";
