@@ -43,9 +43,9 @@ public class DocumentoDAO {
 		return stmt.executeUpdate();
 	}
 	
-	public Documento getDocumento(String url) throws Exception {
-		stmt = con.prepareStatement("SELECT * FROM TB_DOCUMENTO WHERE URL = ?");
-		stmt.setString(1, url);
+	public Documento getDocumento(int idDocumento) throws Exception {
+		stmt = con.prepareStatement("SELECT * FROM TB_DOCUMENTO WHERE ID_DOCUMENTO = ?");
+		stmt.setInt(1, idDocumento);
 		rset = stmt.executeQuery();
 		Documento objeto = new Documento();
 		if(rset.next()) {
