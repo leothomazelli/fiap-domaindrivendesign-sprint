@@ -13,8 +13,8 @@ public class AdicionarSinistro {
 		try {
 			SinistroDAO dao = new SinistroDAO();
 			System.out.println("Ocorrencias adicionadas: " + dao.adicionarSinistro(new Sinistro(JOptionPane.showInputDialog("Informe a data de abertura"),
-																								JOptionPane.showInputDialog("Informe o horário da ocorrência"),
-																								JOptionPane.showInputDialog("Descreva o a ocorrência"),
+																								JOptionPane.showInputDialog("Informe o horÃ¡rio da ocorrÃªncia"),
+																								JOptionPane.showInputDialog("Descreva a ocorrÃªncia"),
 																								JOptionPane.showInputDialog("Descreva os danos"))));
 			dao.close();
 		}
