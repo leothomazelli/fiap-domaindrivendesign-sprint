@@ -44,6 +44,26 @@ public class EnderecoDAO {
 		stmt.setString(2, cep);
 		return stmt.executeUpdate();
 	}
+	
+	public Endereco getEnderecoById(int idEndereco) throws Exception{
+		stmt = con.prepareStatement("SELECT * FROM TB_ENDERECO WHERE CEP = ?");
+		
+		stmt.setInt(1, idEndereco);
+		rs = stmt.executeQuery();
+		Endereco obj = new Endereco();
+		if(rs.next()) {
+			obj.setLogradouro(rs.getString("LOGRADOURO"));
+			obj.setCidade(rs.getString("CIDADE"));
+			obj.setUf(rs.getString("UF"));
+			obj.setNumero(rs.getString("NUMERO"));
+			obj.setBairro(rs.getString("BAIRRO"));
+			obj.setCep(rs.getString("CEP"));
+			obj.setIdEndereco(rs.getInt("ID_ENDERECO"));
+			obj.setComplemento(rs.getString("COMPLEMENTO"));
+		}
+		return obj;
+	}
+	
 	public Endereco getEndereco(String cep) throws Exception{
 		stmt = con.prepareStatement("SELECT * FROM TB_ENDERECO WHERE CEP = ?");
 		
@@ -57,7 +77,8 @@ public class EnderecoDAO {
 			objeto.setNumero(rs.getString("NUMERO"));
 			objeto.setBairro(rs.getString("BAIRRO"));
 			objeto.setCep(rs.getString("CEP"));
-			objeto.setIdEndereco(rs.getInt("ID"));
+			objeto.setIdEndereco(rs.getInt("ID_ENDERECO"));
+			objeto.setComplemento(rs.getString("COMPLEMENTO"));
 		}
 		return objeto;
 	}
