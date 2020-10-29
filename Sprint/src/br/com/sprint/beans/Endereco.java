@@ -1,6 +1,6 @@
 package br.com.sprint.beans;
 
-public class Enderecos {
+public class Endereco {
 	private int cep;
 	private String logradouro = new String();
 	private String cidade = new String();
@@ -8,9 +8,9 @@ public class Enderecos {
 	private String bairro = new String();
 	private String complemento = new String();
 	
-	public Enderecos() {}
+	public Endereco() {}
 
-	public Enderecos(int cep, String logradouro, String cidade, String uf, String bairro, String complemento) {
+	public Endereco(int cep, String logradouro, String cidade, String uf, String bairro, String complemento) {
 		this.cep = cep;
 		this.logradouro = logradouro;
 		this.cidade = cidade;
