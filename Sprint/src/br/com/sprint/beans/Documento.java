@@ -1,6 +1,6 @@
 package br.com.sprint.beans;
 
-public class Documentos {
+public class Documento {
 
 	private int idDocumento;
 	private String tipo = new String();
@@ -8,18 +8,18 @@ public class Documentos {
 	private String ultimaModificacao = new String();
 	private String dtVencimento = new String();
 	
-	public Documentos() {}
+	public Documento() {}
 	
-	public Documentos(int idDocumento) {
+	public Documento(int idDocumento) {
 		this.idDocumento = idDocumento;
 	}
-	public Documentos(String tipo, String url, String ultimaModificacao, String dtVencimento) {
+	public Documento(String tipo, String url, String ultimaModificacao, String dtVencimento) {
 		this.tipo = tipo;
 		this.url = url;
 		this.ultimaModificacao = ultimaModificacao;
 		this.dtVencimento = dtVencimento;
 	}
-	public Documentos(int idDocumento, String tipo, String url, String ultimaModificacao, String dtVencimento) {
+	public Documento(int idDocumento, String tipo, String url, String ultimaModificacao, String dtVencimento) {
 		this.idDocumento = idDocumento;
 		this.tipo = tipo;
 		this.url = url;
