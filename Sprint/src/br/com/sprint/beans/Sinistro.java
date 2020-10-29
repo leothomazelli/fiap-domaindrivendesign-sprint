@@ -8,7 +8,8 @@ public class Sinistro {
 	private String descricaoEvento = new String();
 	private String descricaoDanos = new String();
 	private Documento documentosMotorista = new Documento();
-	
+	private Motorista motorista = new Motorista();
+
 	public Sinistro() {}
 	
 	public Sinistro(int idSinistro) {
@@ -20,32 +21,35 @@ public class Sinistro {
 		this.descricaoEvento = descricaoEvento;
 		this.descricaoDanos = descricaoDanos;
 	}
-	public Sinistro(String data, String horarioDaOcorrencia, String descricaoEvento, String descricaoDanos, Documento documentosMotorista) {
+	public Sinistro(String data, String horarioDaOcorrencia, String descricaoEvento, String descricaoDanos, Documento documentosMotorista, Motorista motorista) {
 		this.data = data;
 		this.horarioDaOcorrencia = horarioDaOcorrencia;
 		this.descricaoEvento = descricaoEvento;
 		this.descricaoDanos = descricaoDanos;
 		this.documentosMotorista = documentosMotorista;
+		this.motorista = motorista;
 	}
-	public Sinistro(int idSinistro, String data, String horarioDaOcorrencia, String descricaoEvento, String descricaoDanos, Documento documentosMotorista) {
+	public Sinistro(int idSinistro, String data, String horarioDaOcorrencia, String descricaoEvento, String descricaoDanos, Documento documentosMotorista, Motorista motorista) {
 		this.idSinistro = idSinistro;
 		this.data = data;
 		this.horarioDaOcorrencia = horarioDaOcorrencia;
 		this.descricaoEvento = descricaoEvento;
 		this.descricaoDanos = descricaoDanos;
 		this.documentosMotorista = documentosMotorista;
+		this.motorista = motorista;
 	}
 	
 	public String getAll() {
-		return idSinistro + "\n" + data + "\n" + horarioDaOcorrencia + "\n" + descricaoEvento + "\n" + descricaoDanos + "\n" + documentosMotorista.getAll();
+		return idSinistro + "\n" + data + "\n" + horarioDaOcorrencia + "\n" + descricaoEvento + "\n" + descricaoDanos + "\n" + documentosMotorista.getAll() + "\n" + motorista.getAll();
 	}
-	public void setAll(int idSinistro, String data, String horarioDaOcorrencia, String descricaoEvento, String descricaoDanos, Documento documentosMotorista) {
+	public void setAll(int idSinistro, String data, String horarioDaOcorrencia, String descricaoEvento, String descricaoDanos, Documento documentosMotorista, Motorista motorista) {
 		this.idSinistro = idSinistro;
 		this.data = data;
 		this.horarioDaOcorrencia = horarioDaOcorrencia;
 		this.descricaoEvento = descricaoEvento;
 		this.descricaoDanos = descricaoDanos;
 		this.documentosMotorista = documentosMotorista;
+		this.motorista = motorista;
 	}
 	
 	public int getIdSinistro() {
@@ -66,6 +70,9 @@ public class Sinistro {
 	public Documento getDocumentosMotorista() {
 		return documentosMotorista;
 	}
+	public Motorista getMotorista() {
+		return motorista;
+	}
 	public void setIdSinistro(int idSinistro) {
 		this.idSinistro = idSinistro;
 	}
@@ -83,5 +90,8 @@ public class Sinistro {
 	}
 	public void setDocumentosMotorista(Documento documentosMotorista) {
 		this.documentosMotorista = documentosMotorista;
+	}
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
 	}
 }
