@@ -7,6 +7,8 @@ public class Documento {
 	private String url = new String();
 	private String ultimaModificacao = new String();
 	private String dtVencimento = new String();
+	private Motorista motorista = new Motorista();
+	private Sinistro sinistro = new Sinistro();
 	
 	public Documento() {}
 	
@@ -19,25 +21,27 @@ public class Documento {
 		this.ultimaModificacao = ultimaModificacao;
 		this.dtVencimento = dtVencimento;
 	}
-	public Documento(int idDocumento, String tipo, String url, String ultimaModificacao, String dtVencimento) {
+	public Documento(int idDocumento, String tipo, String url, String ultimaModificacao, String dtVencimento, Motorista motorista, Sinistro sinistro) {
 		this.idDocumento = idDocumento;
 		this.tipo = tipo;
 		this.url = url;
 		this.ultimaModificacao = ultimaModificacao;
 		this.dtVencimento = dtVencimento;
+		this.motorista = motorista;
+		this.sinistro = sinistro;
 	}
-	
 	public String getAll() {
 		return idDocumento + "\n" + tipo + "\n" + url + "\n" + ultimaModificacao + "\n" + dtVencimento;
 	}
-	public void setAll(int idDocumento, String tipo, String url, String ultimaModificacao, String dtVencimento) {
+	public void setAll(int idDocumento, String tipo, String url, String ultimaModificacao, String dtVencimento, Motorista motorista, Sinistro sinistro) {
 		this.idDocumento = idDocumento;
 		this.tipo = tipo;
 		this.url = url;
 		this.ultimaModificacao = ultimaModificacao;
 		this.dtVencimento = dtVencimento;
+		this.motorista = motorista;
+		this.sinistro = sinistro;
 	}
-	
 	public int getIdDocumento() {
 		return idDocumento;
 	}
@@ -47,12 +51,17 @@ public class Documento {
 	public String getUrl() {
 		return url;
 	}
-
 	public String getUltimaModificacao() {
 		return ultimaModificacao;
 	}
 	public String getDtVencimento() {
 		return dtVencimento;
+	}
+	public Motorista getMotorista() {
+		return motorista;
+	}
+	public Sinistro getSinistro() {
+		return sinistro;
 	}
 	public void setIdDocumento(int idDocumento) {
 		this.idDocumento = idDocumento;
@@ -66,7 +75,13 @@ public class Documento {
 	public void setUltimaModificacao(String ultimaModificacao) {
 		this.ultimaModificacao = ultimaModificacao;
 	}
-	public void setDataVencimento(String dtVencimento) {
+	public void setDtVencimento(String dtVencimento) {
 		this.dtVencimento = dtVencimento;
+	}
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
+	public void setSinistro(Sinistro sinistro) {
+		this.sinistro = sinistro;
 	}
 }
