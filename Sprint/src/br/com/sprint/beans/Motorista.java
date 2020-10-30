@@ -1,6 +1,6 @@
 package br.com.sprint.beans;
 
-public class Motoristas {
+public class Motorista {
 
 	private int idMotorista;
 	private String nome = new String();
@@ -8,22 +8,22 @@ public class Motoristas {
 	private String telefone = new String();
 	private String senha = new String();
 	private String numLogradouro = new String();
-	private Enderecos endereco = new Enderecos();
-	private Documentos documentos = new Documentos();
+	private Endereco endereco = new Endereco();
+	private Documento documentos = new Documento();
 	
-	public Motoristas() {}
+	public Motorista() {}
 	
-	public Motoristas(int idMotorista) {
+	public Motorista(int idMotorista) {
 		this.idMotorista = idMotorista;
 	}
-	public Motoristas(String nome, String email, String telefone, String senha, String numLogradouro) {
+	public Motorista(String nome, String email, String telefone, String senha, String numLogradouro) {
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.senha = senha;
 		this.numLogradouro = numLogradouro;
 	}
-	public Motoristas(String nome, String email, String telefone, String senha, String numLogradouro, Enderecos endereco, Documentos documentos) {
+	public Motorista(String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco, Documento documentos) {
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
@@ -32,7 +32,7 @@ public class Motoristas {
 		this.endereco = endereco;
 		this.documentos = documentos;
 	}
-	public Motoristas(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Enderecos endereco, Documentos documentos) {
+	public Motorista(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco, Documento documentos) {
 		this.idMotorista = idMotorista;
 		this.nome = nome;
 		this.email = email;
@@ -46,7 +46,7 @@ public class Motoristas {
 	public String getAll() {
 		return idMotorista + "\n" + nome + "\n" + email + "\n" +  telefone + "\n" + senha + "\n" + numLogradouro + "\n" + endereco.getAll() + "\n" + documentos.getAll();
 	}
-	public void setAll(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Enderecos endereco, Documentos documentos) {
+	public void setAll(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco, Documento documentos) {
 		this.idMotorista = idMotorista;
 		this.nome = nome;
 		this.email = email;
@@ -75,10 +75,10 @@ public class Motoristas {
 	public String getNumLogradouro() {
 		return numLogradouro;
 	}
-	public Enderecos getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
-	public Documentos getDocumentos() {
+	public Documento getDocumentos() {
 		return documentos;
 	}
 	public void setIdMotorista(int idMotorista) {
@@ -99,10 +99,10 @@ public class Motoristas {
 	public void setNumLogradouro(String numLogradouro) {
 		this.numLogradouro = numLogradouro;
 	}
-	public void setEndereco(Enderecos endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	public void setDocumentos(Documentos documentos) {
+	public void setDocumentos(Documento documentos) {
 		this.documentos = documentos;
 	}
 }
