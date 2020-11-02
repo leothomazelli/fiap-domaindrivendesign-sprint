@@ -16,10 +16,8 @@ public class GetEndereco {
 			System.out.println("Logradouro: " + resposta.getLogradouro());
 			System.out.println("Cidade: " + resposta.getCidade());
 			System.out.println("UF: " + resposta.getUf());
-			System.out.println("Número: " + resposta.getNumero());
 			System.out.println("Bairro: " + resposta.getBairro());
-			System.out.println("CEP: " + resposta.getCep());
-			System.out.println("ID do endereço: " + resposta.getIdEndereco());
+			System.out.println("CEP: " + resposta.getComplemento());
 			dao.close();
 		}
 		catch (Exception e) {
