@@ -11,7 +11,7 @@ public class UpdateEndereco {
 
 		try {
 			EnderecoDAO dao = new EnderecoDAO();
-			System.out.println("Endereços atualizados: " + dao.atualizarLogradouro(JOptionPane.showInputDialog("Informe o CEP do logradouro que deseja atualizar"),
+			System.out.println("EndereÃ§os atualizados: " + dao.atualizarLogradouro(JOptionPane.showInputDialog("Informe o CEP do logradouro que deseja atualizar"),
 																				   JOptionPane.showInputDialog("Informe o logradouro atualizado")));
 			dao.close();
 		}
@@ -21,3 +21,4 @@ public class UpdateEndereco {
 	}
 
 }
+
