@@ -11,7 +11,7 @@ public class DeletarEndereco {
 		
 		try {
 			EnderecoDAO dao = new EnderecoDAO();
-			System.out.println("Endereços deletados: " + dao.deletePorId(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID que deseja remover"))));
+			System.out.println("EndereÃ§os deletados: " + dao.deletePorCep(JOptionPane.showInputDialog("Informe o ID que deseja remover")));
 			dao.close();
 		}
 		catch (Exception e) {
