@@ -9,7 +9,6 @@ public class Motorista {
 	private String senha = new String();
 	private String numLogradouro = new String();
 	private Endereco endereco = new Endereco();
-	private Documento documentos = new Documento();
 	
 	public Motorista() {}
 	
@@ -23,16 +22,15 @@ public class Motorista {
 		this.senha = senha;
 		this.numLogradouro = numLogradouro;
 	}
-	public Motorista(String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco, Documento documentos) {
+	public Motorista(String nome, String email, String telefone, String senha, String numLogradouro, Endereco cepEndereco) {
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.senha = senha;
 		this.numLogradouro = numLogradouro;
-		this.endereco = endereco;
-		this.documentos = documentos;
+		this.endereco = new Endereco(cepEndereco);
 	}
-	public Motorista(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco, Documento documentos) {
+	public Motorista(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco) {
 		this.idMotorista = idMotorista;
 		this.nome = nome;
 		this.email = email;
@@ -40,13 +38,12 @@ public class Motorista {
 		this.senha = senha;
 		this.numLogradouro = numLogradouro;
 		this.endereco = endereco;
-		this.documentos = documentos;
 	}
 	
 	public String getAll() {
-		return idMotorista + "\n" + nome + "\n" + email + "\n" +  telefone + "\n" + senha + "\n" + numLogradouro + "\n" + endereco.getAll() + "\n" + documentos.getAll();
+		return idMotorista + "\n" + nome + "\n" + email + "\n" +  telefone + "\n" + senha + "\n" + numLogradouro + "\n" + endereco.getAll();
 	}
-	public void setAll(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco, Documento documentos) {
+	public void setAll(int idMotorista, String nome, String email, String telefone, String senha, String numLogradouro, Endereco endereco) {
 		this.idMotorista = idMotorista;
 		this.nome = nome;
 		this.email = email;
@@ -54,7 +51,6 @@ public class Motorista {
 		this.telefone = telefone;
 		this.senha = senha;
 		this.numLogradouro = numLogradouro;
-		this.documentos = documentos;
 	}
 	
 	public int getIdMotorista() {
@@ -78,9 +74,6 @@ public class Motorista {
 	public Endereco getEndereco() {
 		return endereco;
 	}
-	public Documento getDocumentos() {
-		return documentos;
-	}
 	public void setIdMotorista(int idMotorista) {
 		this.idMotorista = idMotorista;
 	}
@@ -101,8 +94,5 @@ public class Motorista {
 	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-	public void setDocumentos(Documento documentos) {
-		this.documentos = documentos;
 	}
 }
