@@ -12,12 +12,11 @@ public class AdicionarEndereco {
 		
 		try {
 			EnderecoDAO dao = new EnderecoDAO();
-			System.out.println("Endereços adicionados: " + dao.adicionarEndereco(new Endereco(JOptionPane.showInputDialog("Informe o logradouro").toUpperCase(),
+			System.out.println("EndereÃ§os adicionados: " + dao.adicionarEndereco(new Endereco(JOptionPane.showInputDialog("Informe o CEP"),
+																							  JOptionPane.showInputDialog("Informe o logradouro").toUpperCase(),
 																							  JOptionPane.showInputDialog("Informe a cidade").toUpperCase(),
 																							  JOptionPane.showInputDialog("Informe o UF").toUpperCase(),
-																							  JOptionPane.showInputDialog("Informe o número"),
 																							  JOptionPane.showInputDialog("Informe o bairro").toUpperCase(),
-																							  JOptionPane.showInputDialog("Informe o CEP"),
 																							  JOptionPane.showInputDialog("Informe o complemento").toUpperCase())));
 			dao.close();
 		}
