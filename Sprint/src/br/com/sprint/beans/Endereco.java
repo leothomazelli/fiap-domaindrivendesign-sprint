@@ -1,7 +1,7 @@
 package br.com.sprint.beans;
 
 public class Endereco {
-	private int cep;
+	private String cep;
 	private String logradouro = new String();
 	private String cidade = new String();
 	private String uf = new String();
@@ -10,7 +10,11 @@ public class Endereco {
 	
 	public Endereco() {}
 
-	public Endereco(int cep, String logradouro, String cidade, String uf, String bairro, String complemento) {
+	public Endereco(String cepEndereco) {
+		this.cep = cepEndereco;
+	}
+	
+	public Endereco(String cep, String logradouro, String cidade, String uf, String bairro, String complemento) {
 		this.cep = cep;
 		this.logradouro = logradouro;
 		this.cidade = cidade;
@@ -23,7 +27,7 @@ public class Endereco {
 		return cep + "\n" + logradouro + "\n" + cidade + "\n" + uf + "\n" + bairro + "\n" + complemento;
 	}
 	
-	public void setAll(int cep, String logradouro, String cidade, String uf, String bairro, String complemento) {
+	public void setAll(String cep, String logradouro, String cidade, String uf, String bairro, String complemento) {
 		this.cep = cep;
 		this.logradouro = logradouro;
 		this.cidade = cidade;
@@ -31,7 +35,7 @@ public class Endereco {
 		this.bairro = bairro;
 		this.complemento = complemento;
 	}
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
 	public String getLogradouro() {
@@ -49,7 +53,7 @@ public class Endereco {
 	public String getComplemento() {
 		return complemento;
 	}
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 	public void setLogradouro(String logradouro) {
