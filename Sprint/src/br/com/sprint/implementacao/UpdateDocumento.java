@@ -11,8 +11,8 @@ public class UpdateDocumento{
 		
 		try {
 			DocumentoDAO dao = new DocumentoDAO();
-			System.out.println("Endereços atualizados: " + dao.atualizarVencimento(JOptionPane.showInputDialog("Informe a URL do documento que deseja atualizar"),
-																				   JOptionPane.showInputDialog("Informe a atualização no vencimento")));
+			System.out.println("EndereÃ§os atualizados: " + dao.atualizarDocumento(JOptionPane.showInputDialog("Informe a URL do documento que deseja atualizar"),
+																				   JOptionPane.showInputDialog("Informe a nova data de vencimento do documento")));
 		    dao.close();
 		}
 		catch (Exception e) {
