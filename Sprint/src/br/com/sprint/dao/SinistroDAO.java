@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 //import java.text.SimpleDateFormat;
 //import java.util.Date;
 
+import br.com.sprint.beans.Motorista;
 import br.com.sprint.beans.Sinistro;
 import br.com.sprint.conexao.Conexao;
 
@@ -29,14 +30,19 @@ public class SinistroDAO {
 	}
 	
 	public int adicionarSinistro(Sinistro objeto) throws Exception {
-		stmt = con.prepareStatement("INSERT INTO SINISTROS(ID_MOTORISTA, DT_SINISTRO, HR_OCORRENCIA, DESC_EVENTO, DESC_DANOS) values (?,?,?,?,?)");
-		stmt.setInt(1, objeto.getMotorista().getIdMotorista());
+		stmt = con.prepareStatement("INSERT INTO SINISTROS(ID_SINISTRO, DT_SINISTRO, HR_OCORRENCIA, DESC_EVENTO, DESC_DANOS, ID_MOTORISTA) values (?,?,?,?,?,?)");
+		
+		
+		stmt.setInt(1, objeto.getIdSinistro());
 		stmt.setString(2, objeto.getData());
 		stmt.setString(3, objeto.getHorarioDaOcorrencia());
 		stmt.setString(4, objeto.getDescricaoEvento());
 		stmt.setString(5, objeto.getDescricaoDanos());
+		stmt.setInt(6, objeto.getMotorista().getIdMotorista());
 		return stmt.executeUpdate();
 	}
+	
+	
 	
 	public int atualizarDescricaoEvento(String descricaoEvento, int idSinistro) throws Exception {
 		stmt = con.prepareStatement("UPDATE SINISTROS SET DESC_EVENTO = ? WHERE ID_SINISTRO = ?");
@@ -46,18 +52,22 @@ public class SinistroDAO {
 	}
 	
 	public Sinistro getSinistro(int idSinistro) throws Exception {
-		stmt = con.prepareStatement("SELECT * FROM MOTORISTAS INNER JOIN SINISTROS ON (MOTORISTAS.ID_MOTORISTA = SINISTROS.ID_MOTORISTA) WHERE ID_SINISTRO = ?");
+		stmt = con.prepareStatement("SELECT * FROM MOTORISTAS INNER JOIN SINISTROS ON (MOTORISTAS.ID_MOTORISTA = SINISTROS.ID_SINISTRO) WHERE ID_SINISTRO = ?");
 		stmt.setInt(1, idSinistro);
 		rset = stmt.executeQuery();
 		Sinistro objeto = new Sinistro();
+		MotoristaDAO motoristaDAO = new MotoristaDAO();
 		if(rset.next()) {
 			objeto.setIdSinistro(rset.getInt("ID_SINISTRO"));
-			objeto.setData(rset.getString("DATA"));
+			objeto.setData(rset.getString("DT_SINISTRO"));
 			objeto.setHorarioDaOcorrencia(rset.getString("HR_OCORRENCIA"));
 			objeto.setDescricaoEvento(rset.getString("DESC_EVENTO"));
 			objeto.setDescricaoDanos(rset.getString("DESC_DANOS"));
-			objeto.getMotorista().setIdMotorista(rset.getInt("ID_MOTORISTA"));
-
+			
+			Motorista motorista = motoristaDAO.getMotoristaById(rset.getInt("ID_MOTORISTA"));
+			
+			objeto.setMotorista(motorista);
+			
 			/*String dataRecebida = "23/11/2015";
 			SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -65,7 +75,7 @@ public class SinistroDAO {
 			Date data = formato.parse("23/11/2015");
 			objeto.setData(data);*/
 		}
+		motoristaDAO.close();
 		return objeto;
 	}
 }
-
