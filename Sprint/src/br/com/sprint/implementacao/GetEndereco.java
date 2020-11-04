@@ -2,22 +2,27 @@ package br.com.sprint.implementacao;
 
 import javax.swing.JOptionPane;
 
-import br.com.sprint.beans.Endereco;
-import br.com.sprint.dao.EnderecoDAO;
+import br.com.sprint.beans.Motorista;
+import br.com.sprint.dao.MotoristaDAO;
 import br.com.sprint.excecao.Excecoes;
 
-public class GetEndereco {
+public class GetMotorista {
 
 	public static void main(String [] args) {
 		
 		try {
-			EnderecoDAO dao = new EnderecoDAO();
-			Endereco resposta = dao.getEndereco(JOptionPane.showInputDialog("Informe o CEP que deseja buscar"));
-			System.out.println("Logradouro: " + resposta.getLogradouro());
-			System.out.println("Cidade: " + resposta.getCidade());
-			System.out.println("UF: " + resposta.getUf());
-			System.out.println("Bairro: " + resposta.getBairro());
-			System.out.println("CEP: " + resposta.getComplemento());
+			MotoristaDAO dao = new MotoristaDAO();
+			Motorista resposta = dao.getMotoristaById(Integer.parseInt(JOptionPane.showInputDialog("Informe o id que deseja buscar")));
+			System.out.println("Nome do motorista: " + resposta.getNome());
+			System.out.println("E-mail: " + resposta.getEmail());
+			System.out.println("Telefone: " + resposta.getTelefone());
+			System.out.println("Número do logradouro: " + resposta.getNumLogradouro());
+			System.out.println("CEP: " + resposta.getEndereco().getCep());
+			System.out.println("Logradouro: " + resposta.getEndereco().getLogradouro());
+			System.out.println("Cidade: " + resposta.getEndereco().getCidade());
+			System.out.println("UF: " + resposta.getEndereco().getUf());
+			System.out.println("Bairro: " + resposta.getEndereco().getBairro());
+			System.out.println("Complemento: " + resposta.getEndereco().getComplemento());
 			dao.close();
 		}
 		catch (Exception e) {
