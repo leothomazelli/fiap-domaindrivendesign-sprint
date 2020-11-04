@@ -1,5 +1,7 @@
 package br.com.sprint.excecao;
- 
+
+import java.sql.SQLIntegrityConstraintViolationException;
+
 public class Excecoes {
 
      public static String tratarExcecao(Exception e) {
@@ -8,14 +10,14 @@ public class Excecoes {
         	 return "Objeto Nulo";
 
          }else if(e instanceof NumberFormatException) {
-             return "N˙mero inv·lido";
-
+             return "N√∫mero inv√°lido";
          }else if(e instanceof ArrayIndexOutOfBoundsException) {
              return "Vetor estourou";
-         }
-         else {
+         }else if(e instanceof SQLIntegrityConstraintViolationException) {
+        	 return "Identifica√ß√£o n√£o encontrada";
+         }else {
              e.printStackTrace();
-             return "ExceÁ„o n„o tratada";
+             return "Exce√ß√£o n√£o tratada";
          }
      }
  }
