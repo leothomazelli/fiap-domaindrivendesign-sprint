@@ -12,13 +12,13 @@ public class GetDocumento {
 		
 		try {
 			DocumentoDAO dao = new DocumentoDAO();
+			
 			Documento resposta = dao.getDocumento(Integer.parseInt(JOptionPane.showInputDialog("Informe o ID que deseja buscar")));
 			System.out.println("ID do documento: " + resposta.getIdDocumento());
 			System.out.println("Tipo do documento: " + resposta.getTipo());
 			System.out.println("URL: " + resposta.getUrl());
-			System.out.println("Data de criação: " + resposta.getDataCriacao());
-			System.out.println("Ultima modificação: " + resposta.getUltimaModificacao());
-			System.out.println("Data de vencimento: " + resposta.getDataVencimento());
+			System.out.println("Ultima modificaÃ§Ã£o: " + resposta.getUltimaModificacao());
+			System.out.println("Data de vencimento: " + resposta.getDtVencimento());
 			dao.close();
 		}
 		catch (Exception e) {
